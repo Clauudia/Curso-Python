@@ -1,0 +1,10 @@
+Nombre:Virgilio
+Apellido:Lopez
+Mascota:Firulais
+Color:Verde
+Edad:25
+Año de nacimiento:1992
+Grupo musical:LedZeppelin
+Título:Computacion
+Canción:Stairwaytoheaven
+Comida:Sushi
