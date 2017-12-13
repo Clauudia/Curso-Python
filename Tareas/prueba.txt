@@ -1,2 +1,0 @@
-nombre:clau
-contra:password123
