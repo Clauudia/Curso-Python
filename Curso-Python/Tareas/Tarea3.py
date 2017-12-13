@@ -77,4 +77,4 @@ def crea_contrasenas(archivo1, archivo2):
 	entrada.close()
 	salida.close()
 
-crea_contrasenas('prueba2.txt', 'contrasena3.txt')
+crea_contrasenas('prueba.txt', 'contrasena.txt')
