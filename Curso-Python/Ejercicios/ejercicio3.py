@@ -39,15 +39,12 @@ def separa_aprobados_reprobados():
         else:
             reprobados.append(alumno)
     return tuple(reprobados), tuple (aprobados)
-    #print 'los alumnos aprobados son: ' % aprobados 
-    #print 'los alumnos reprobados son: ' % reprobados
 
 def calcula_promedio():
     suma = 0
     for alumno in calificacion_alumno:
         suma += calificacion_alumno[alumno]
         promedio = float(suma) / 15.0
-        #print 'El promedio es: ' % promedio
     return promedio
 
 def conjunto_califs():
@@ -62,7 +59,3 @@ imprime_calificaciones()
 separa_aprobados_reprobados()
 calcula_promedio()
 
-#print 'Los alumnos aprobados son: ' % aprobados
-#print 'Los alumnos reprobados son: ' % reprobados
-#print 'El promedio del grupo es : ' % promedio
-#print 'las calificaciones son: ' % calificaciones
