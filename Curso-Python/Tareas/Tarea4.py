@@ -37,16 +37,16 @@ def lee_xml(archivo_passwd):
 	with open(archivo_nmap,'r') as nmap:
 		root = ET.fromstring(nmap.read())
   		for n in root.findall('host'):  #Pueros abieros
-            		hpr = n.find('status').get('state')
-				if hpre == 'up':
-					hpre.append(hpre)
-       			ha = n.find('status').get('state')
-				if ha == 'down':
-					hapa.append(ha)
-			h2 = n.find('port').get('portid')
-			a = n.find('state').get('state')
-				if h2 == '22' and a == "open":
-					h22.append(h2)
+        	hpr = n.find('status').get('state')
+		if hpre == 'up':
+			hpre.append(hpre)
+       		ha = n.find('status').get('state')
+		if ha == 'down':
+			hapa.append(ha)
+		h2 = n.find('port').get('portid')
+		a = n.find('state').get('state')
+			if h2 == '22' and a == "open":
+				h22.append(h2)
 			h5 = n.find('port').get('portid')
 			a = n.find('state').get('state')
 				if h5 == '53' and a == "open":
@@ -93,19 +93,6 @@ def lee_xml(archivo_passwd):
 			idom = n.find(('address').get('addr')
 			hn = n.find('hostname').get('name')
 					ido.append(idom)
-#Mostrar Host
-
-print "Cantidad de Host Prendidos:" len(hpre)
-print "Cantidad de Host Apagados:" len(hapa)
-print "Cantidad de Host Con Puerto 22 Abierto:" len(h22)
-print "Cantidad de Host Con Puerto 53 Abierto:" len(h53)
-print "Cantidad de Host Con Puerto 80 Abierto:" len(h80)
-print "Cantidad de Host Con Puerto 443 Abierto:" len(h443)
-print "Cantidad de Host Con Nombre de Dominio:" len(hd)
-print "Cantidad de Host que utilizan Apache:" len(ha)
-print "Cantidad de Host que utilizan nginx:" len(hn)
-print "Cantidad de Host que utilizan Dionaea:" len(hdio)
-print "Cantidad de Host que utilizan otro servicio:" len(ho)
 
 #Creacion archivos csv
 
@@ -133,5 +120,27 @@ file = open("dominios.csv", "w". newline='')
 spamreader = csv.writer(file)
 spamreader = writerow(ido)
 file.close()
+
+def escribe_reporte():
+	contenido =""
+	contenido += "Cantidad de Host Prendidos:" len(hpre)
+	contenido += "Cantidad de Host Apagados:" len(hapa)
+	contenido += "Cantidad de Host Con Puerto 22 Abierto:" len(h22)
+	contenido += "Cantidad de Host Con Puerto 53 Abierto:" len(h53)
+	contenido += "Cantidad de Host Con Puerto 80 Abierto:" len(h80)
+	contenido += "Cantidad de Host Con Puerto 443 Abierto:" len(h443)
+	contenido += "Cantidad de Host Con Nombre de Dominio:" len(hd)
+	contenido += "Cantidad de Host que utilizan Apache:" len(ha)
+	contenido += "Cantidad de Host que utilizan nginx:" len(hn)
+	contenido += "Cantidad de Host que utilizan Dionaea:" len(hdio)
+	contenido += "Cantidad de Host que utilizan otro servicio:" len(ho)
+	return contenido
+
+def genera_reporte(contenido, archivo):
+	with open(archivo, 'w') as reporte:
+		reporte.write(contenido)
+
+
+
 
             
